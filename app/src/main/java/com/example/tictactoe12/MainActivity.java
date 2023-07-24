@@ -28,16 +28,17 @@ public class MainActivity extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i  = new Intent(MainActivity.this,MainActivity2.class);
-                i.putExtra("Name",etUser.getText().toString());
-                i.putExtra("Password", etPwd.getText().toString());
-                startActivity(i);
+
+
+
 
                 String user=etUser.getText().toString();
                 String pwd=etPwd.getText().toString();
 
                 if(user.equals("ak") && pwd.equals("50")){
                     Toast.makeText(MainActivity.this,"Authenticated",Toast.LENGTH_SHORT).show();
+                    Intent i  = new Intent(MainActivity.this,MainActivity2.class);
+                    startActivity(i);
 
                 }else {
                     Toast.makeText(MainActivity.this, "Denied", Toast.LENGTH_SHORT).show();
